@@ -75,7 +75,7 @@ public class RSAEncryption {
                     "Original Text: " + CaesarMessageString
                             + "\nEncrypted: " + encryptedText
                             + "\nDecrypted: " + decryptedText);
-            JDialog dialog = optionPane.createDialog("Caear print");
+            JDialog dialog = optionPane.createDialog("Caesar print");
 
             dialog.setResizable(true);
             dialog.setVisible(true);
@@ -142,10 +142,10 @@ public class RSAEncryption {
                 textArea.setLineWrap(true);
                 textArea.setWrapStyleWord(true);
 
-                // JTextArea를 JScrollPane에 추가
+                // JTextArea 를 JScrollPane 에 추가
                 JScrollPane scrollPane = new JScrollPane(textArea);
 
-                // JScrollPane을 포함한 JOptionPane 생성
+                // JScrollPane 을 포함한 JOptionPane 생성
                 JOptionPane optionPane = new JOptionPane(scrollPane, JOptionPane.PLAIN_MESSAGE, JOptionPane.DEFAULT_OPTION);
                 JDialog dialog = optionPane.createDialog("RSA print");
 
