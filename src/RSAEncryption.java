@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import javax.swing.*;
 
@@ -32,9 +33,9 @@ public class RSAEncryption {
     }
 
     //----------------RSA 기법(method)----------------
-    private BigInteger n; // 공개 키 n
-    private BigInteger e; // 공개 키 지수 e
-    private BigInteger d; // 개인 키 d
+    private final BigInteger n; // 공개 키 n
+    private final BigInteger e; // 공개 키 지수 e
+    private final BigInteger d; // 개인 키 d
 
     // RSA 생성자. 공개 키와 개인 키를 초기화한다.
     public RSAEncryption(BigInteger n, BigInteger e, BigInteger d) {
@@ -110,7 +111,7 @@ public class RSAEncryption {
 
             try {
                 // 입력된 문자열을 UTF-8 바이트 배열로 변환
-                byte[] messageBytes = RSAMessageString.getBytes("UTF-8");
+                byte[] messageBytes = RSAMessageString.getBytes(StandardCharsets.UTF_8);
                 BigInteger message = new BigInteger(1, messageBytes);
 
                 // 메시지를 암호화하여 암호문 생성
@@ -128,7 +129,7 @@ public class RSAEncryption {
                     decryptedBytes = tmp;
                 }
 
-                String decryptedString = new String(decryptedBytes, "UTF-8");
+                String decryptedString = new String(decryptedBytes, StandardCharsets.UTF_8);
 
                 // 결과 출력
                 JTextArea textArea = new JTextArea(10, 30);
